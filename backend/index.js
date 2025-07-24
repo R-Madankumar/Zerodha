@@ -15,9 +15,17 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001'],
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'https://your-frontend-url.onrender.com',
+    'https://zerodhadashboard-afgd.onrender.com'
+  ],
   credentials: true
 }));
+
+
+
 app.use(bodyParser.json());
 
 // Load environment variables
@@ -83,7 +91,7 @@ app.post("/login", async (req, res) => {
     }
 
     // Login successful, redirect
-    res.json({ message: "Login successful", redirectUrl: "http://localhost:3000/" });
+    res.json({ message: "Login successful", redirectUrl: "Dashboard" });
     console.log("login success")
 
   } catch (err) {

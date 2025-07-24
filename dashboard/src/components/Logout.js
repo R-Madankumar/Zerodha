@@ -3,7 +3,7 @@ import React from "react";
 const LogoutButton = () => {
   const handleLogout = () => {
     localStorage.clear(); // ✅ Clear login state
-    window.location.href = "http://localhost:3001/login"; // ✅ Redirect to login
+    window.location.href = "Frontend/login"; // ✅ Redirect to login
   };
 
   return (
